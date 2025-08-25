@@ -26,6 +26,13 @@ The focus is on **statistical thinking** and **analytical methods** rather than 
 - Conducted **descriptive statistics** and correlation studies (Pearson, Spearman).
 - Analyzed the effect of **discount strategies** on **customer ratings**.
 
+### 4. Exploratory Data Analysis on Iris Dataset
+
+- Performed **summary statistics** on the classic Iris dataset.
+- Implemented a custom function to calculate the **mode** for numeric columns.
+- Provided **interactive visualizations** (histogram, boxplot, scatterplot) based on user input.
+- Applications: basic EDA demonstration, understanding dataset exploration workflow.
+
 ## Datasets
 
 ### 1. Retail Demand Forecasting & Inventory Optimization
@@ -37,6 +44,10 @@ The focus is on **statistical thinking** and **analytical methods** rather than 
 - https://www.kaggle.com/datasets/arhamrumi/amazon-product-reviews
 
 ### 3. Sales Data Anlysis
+
+### 4.Iris Dataset (EDA)
+
+- Built-in **iris** dataset from R (no external download required).
 
 ## Statistical Concepts Applied
 
@@ -75,3 +86,7 @@ The focus is on **statistical thinking** and **analytical methods** rather than 
 - **Interactive Dashboards**: Build Shiny apps or Plotly dashboards for dynamic data visualization and exploration.
 - **Automated Data Pipelines**: Implement ETL workflows to integrate real-world streaming data from APIs or databases.
 - **Reusable Templates**: Create modular project templates so this repo can serve as a public learning framework for applied statistics.
+- **IRIS EDA extensions**:
+  - Add **species-based visualizations** (scatterplots colored by species).
+  - Incorporate **principal component analysis (PCA)** for dimensionality reduction.
+  - Automate **EDA reports** using R Markdown or Python notebooks.
