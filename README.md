@@ -33,6 +33,13 @@ The focus is on **statistical thinking** and **analytical methods** rather than 
 - Provided **interactive visualizations** (histogram, boxplot, scatterplot) based on user input.
 - Applications: basic EDA demonstration, understanding dataset exploration workflow.
 
+### 5. Probability Distribution Simulation (Poisson & Normal)
+
+- Simulated **Poisson** and **Normal** random variables.
+- Compared simulated **mean, variance, and standard deviation** with theoretical values.
+- Visualized distributions with **histograms** and **boxplots**.
+- Applications: demonstrating how simulated data approximates theoretical distributions.
+
 ## Datasets
 
 ### 1. Retail Demand Forecasting & Inventory Optimization
@@ -49,6 +56,10 @@ The focus is on **statistical thinking** and **analytical methods** rather than 
 
 - Built-in **iris** dataset from R (no external download required).
 
+### 5. Probability Distribution Simulation
+
+- Simulated data generated using R’s random sampling functions (`rpois`, `rnorm`).
+
 ## Statistical Concepts Applied
 
 - **Descriptive statistics** (summary measures, distributions)
@@ -56,6 +67,8 @@ The focus is on **statistical thinking** and **analytical methods** rather than 
 - **Text mining & sentiment analysis**
 - **Time series analysis** (ARIMA forecasting)
 - **Optimization in inventory control**
+- **Exploratory data analysis (EDA)**
+- **Probability distributions & simulation** (Poisson, Normal)
 
 ## Technologies Used
 
@@ -90,3 +103,7 @@ The focus is on **statistical thinking** and **analytical methods** rather than 
   - Add **species-based visualizations** (scatterplots colored by species).
   - Incorporate **principal component analysis (PCA)** for dimensionality reduction.
   - Automate **EDA reports** using R Markdown or Python notebooks.
+- Probability Simulation Extensions:
+  - Add more distributions (Binomial, Exponential, Chi-Square).
+  - Compare simulation results with Central Limit Theorem (CLT) demonstrations.
+  - Automate convergence checks of simulated vs theoretical properties.
