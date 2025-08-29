@@ -60,6 +60,14 @@ The focus is on **statistical thinking** and **analytical methods** rather than 
 
 - Simulated data generated using R’s random sampling functions (`rpois`, `rnorm`).
 
+### 6. Theory of Estimation – Sampling & Density Visualization
+
+- Generated a **Normal distribution** with user-defined sample size.
+- Drew **random samples** from the population and computed their **sample mean** and **standard deviation**.
+- Compared population statistics with sample statistics to demonstrate the **concept of estimation**.
+- Visualized **population vs. sample density plots** (blue = full distribution, red = sample distribution).
+- Applications: illustrating **estimator properties** (bias, variance, consistency) in a hands-on way.
+
 ## Statistical Concepts Applied
 
 - **Descriptive statistics** (summary measures, distributions)
@@ -69,6 +77,7 @@ The focus is on **statistical thinking** and **analytical methods** rather than 
 - **Optimization in inventory control**
 - **Exploratory data analysis (EDA)**
 - **Probability distributions & simulation** (Poisson, Normal)
+- **Estimation Theory** (Sample and Population Statistics, bias & variance)
 
 ## Technologies Used
 
@@ -103,7 +112,7 @@ The focus is on **statistical thinking** and **analytical methods** rather than 
   - Add **species-based visualizations** (scatterplots colored by species).
   - Incorporate **principal component analysis (PCA)** for dimensionality reduction.
   - Automate **EDA reports** using R Markdown or Python notebooks.
-- Probability Simulation Extensions:
+- **Probability Simulation Extensions**:
   - Add more distributions (Binomial, Exponential, Chi-Square).
   - Compare simulation results with Central Limit Theorem (CLT) demonstrations.
   - Automate convergence checks of simulated vs theoretical properties.
