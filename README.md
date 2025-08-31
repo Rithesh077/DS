@@ -32,6 +32,7 @@ The focus is on **statistical thinking** and **analytical methods** rather than 
 - Implemented a custom function to calculate the **mode** for numeric columns.
 - Provided **interactive visualizations** (histogram, boxplot, scatterplot) based on user input.
 - Applications: basic EDA demonstration, understanding dataset exploration workflow.
+- Generated **automated R markdown EDA Reports.**
 
 ### 5. Probability Distribution Simulation (Poisson & Normal)
 
@@ -39,6 +40,8 @@ The focus is on **statistical thinking** and **analytical methods** rather than 
 - Compared simulated **mean, variance, and standard deviation** with theoretical values.
 - Visualized distributions with **histograms** and **boxplots**.
 - Applications: demonstrating how simulated data approximates theoretical distributions.
+- Implemented a general **CLT Simulator.**
+- Compared simulated sampling distributions against theoretical normal curves.
 
 ## Datasets
 
@@ -78,6 +81,7 @@ The focus is on **statistical thinking** and **analytical methods** rather than 
 - **Exploratory data analysis (EDA)**
 - **Probability distributions & simulation** (Poisson, Normal)
 - **Estimation Theory** (Sample and Population Statistics, bias & variance)
+- **Central Limit Theorem.**
 
 ## Technologies Used
 
@@ -111,8 +115,5 @@ The focus is on **statistical thinking** and **analytical methods** rather than 
 - **IRIS EDA extensions**:
   - Add **species-based visualizations** (scatterplots colored by species).
   - Incorporate **principal component analysis (PCA)** for dimensionality reduction.
-  - Automate **EDA reports** using R Markdown or Python notebooks.
 - **Probability Simulation Extensions**:
-  - Add more distributions (Binomial, Exponential, Chi-Square).
-  - Compare simulation results with Central Limit Theorem (CLT) demonstrations.
-  - Automate convergence checks of simulated vs theoretical properties.
+  - Convergence checks, goodness-of-fit tests, Law of Large Numbers demos.
