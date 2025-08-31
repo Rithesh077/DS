@@ -1,5 +1,5 @@
 library(datasets)
-
+library(rmarkdown)
 data("iris")
 summarise_iris <- summary(iris)
 print(summarise_iris)
@@ -66,3 +66,4 @@ if (user_viz_type == 1) {
     print("Invalid visualization type selected.") # nolint
 }
 saveRDS(iris, file = here::here("outputs/tables/iris_dataset.rds"))
+rmarkdown::render("outputs/04_exploratory_data_analysis.Rmd", output_format = "html_document") # nolint
