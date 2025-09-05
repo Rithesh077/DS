@@ -50,7 +50,7 @@ CLT <- function(rfunc, params, mean_theo, var_theo, dist_name, n_samples, sample
         probability = TRUE, # nolint
         main = paste("Simulated CLT -", dist_name), xlab = "Sample Mean", ylab = "Frequency", col = "lightblue", border = "black" # nolint
     ) # nolint
-    curve(dnorm(x, mean = mean_theo, sd = sqrt(var_theo / sample_size)), add = TRUE, col = "red", lwd = 2) # nolint
+    curve(dnorm(x, mean = mean_theo, sd = sqrt(var_theo / sample_size)), add = TRUE, col = "#f26464", lwd = 2) # nolint
 }
 par(mfrow = c(2, 2))
 CLT("rpois", list(lambda = 5), mean_theo = 5, var_theo = 5, dist_name = "Poisson", n_samples = 1000, sample_size = 30) # nolint
@@ -59,3 +59,35 @@ CLT("rbinom", list(size = 10, prob = 0.5), mean_theo = 5, var_theo = 5 * 0.5 * 0
 CLT("rchisq", list(df = 5), mean_theo = 5, var_theo = 10, dist_name = "Chi-Squared", n_samples = 1000, sample_size = 30) # nolint
 CLT("rgamma", list(shape = 5, rate = 1), mean_theo = 5, var_theo = 5, dist_name = "Gamma", n_samples = 1000, sample_size = 30) # nolint
 CLT("rexp", list(rate = 1), mean_theo = 1, var_theo = 1, dist_name = "Exponential", n_samples = 1000, sample_size = 30) # nolint
+# next update will include user input for lambda value, number of simulations, distribution type, sample size, etc. #nolint
+# Convergence checks
+# example of poisson distribution
+lambda <- 5
+dist_poisson <- rpois(1000, lambda)
+check_convergence <- function(data, lambda) {
+    n <- length(data) # nolint
+    cum_mean <- cumsum(data) / (1:n)
+    plot(1:n, cum_mean, type = "l", col = "#3737af", lwd = 2, ylim = c(min(cum_mean, lambda) - 1, max(cum_mean, lambda) + 1), xlab = "Number of Simulations", ylab = "Cumulative Mean", main = "Convergence of Sample Mean to Theoretical Mean") # nolint
+    abline(h = lambda, col = "#1b76ee", lty = 2)
+    legend("topright", legend = c("Cumulative Mean", "Theoretical Mean"), col = c("#4a4ae7", "#ca4747"), lty = c(1, 2), lwd = 2) # nolint
+}
+check_convergence(dist_poisson, lambda)
+# goodness of fit test
+# example of poisson distribution
+pois_table <- table(dist_poisson)
+pois_chisq <- chisq.test(pois_table, p = dpois(as.numeric(names), lambda = lambda), rescale.p = TRUE) # nolint
+print(pois_chisq)
+
+# LLN
+LLN_demo <- function(rfunc, params, mean_theo, var_theo, dist_name, max_n) { # nolint
+    sample_sizes <- seq(10, max_n, by = 10) # nolint
+    sample_means <- sapply(sample_sizes, function(n) mean(do.call(rfunc, c(list(n), params)))) # nolint
+    plot(sample_sizes, sample_means, type = "l", col = "#363686", lwd = 2, ylim = c(min(sample_means, mean_theo) - 1, max(sample_means, mean_theo) + 1), xlab = "Sample Size", ylab = "Sample Mean", main = paste("LLN Demonstration -", dist_name)) # nolint
+    abline(h = mean_theo, col = "#76e60e", lty = 2)
+    legend("topright", legend = c("Sample Mean", "Theoretical Mean"), col = c("#333391", "#b94444"), lty = c(1, 2), lwd = 2) # nolint
+}
+par(mfrow = c(2, 2))
+LLN_demo("rpois", list(lambda = 5), mean_theo = 5, var_theo = 5, dist_name = "Poisson", max_n = 1000) # nolint
+LLN_demo("rnorm", list(mean = 5, sd = sqrt(5)), mean_theo = 5, var_theo = 5, dist_name = "Normal", max_n = 1000) # nolint
+LLN_demo("rbinom", list(size = 10, prob = 0.5), mean_theo = 5, var_theo = 5 * 0.5 * 0.5, dist_name = "Binomial", max_n = 1000) # nolint
+LLN_demo("rchisq", list(df = 5), mean_theo = 5, var_theo = 10, dist_name = "Chi-Squared", max_n = 1000) # nolint
