@@ -7,23 +7,23 @@ chisq_dist <- rchisq(1000, df = 5)
 gamma_dist <- rgamma(1000, shape = 5, rate = 1)
 exp_dist <- rexp(1000, rate = 1)
 
-# comapring theoretical and simulated values
+# comparing theoretical and simulated values
 compare_values <- function(simulated, mean_theo, var_theo, name) {
-    mean <- mean(simulated)
+    mean <- mean(simulated) # nolint
     sd <- sd(simulated)
     var <- var(simulated)
     cat(sprintf(
         "Comparing %s Distribution - Mean: Simulated = %.2f, Theoretical = %.2f, Difference = %.2f\n", # nolint
         name, mean, mean_theo, mean - mean_theo
-    ))
+    )) # nolint
     cat(sprintf(
         "Comparing %s Distribution - SD: Simulated = %.2f, Theoretical = %.2f, Difference = %.2f\n", # nolint
         name, sd, sqrt(var_theo), sd - sqrt(var_theo)
-    ))
+    )) # nolint
     cat(sprintf(
         "Comparing %s Distribution - Var: Simulated = %.2f, Theoretical = %.2f, Difference = %.2f\n", # nolint
         name, var, var_theo, var - var_theo
-    ))
+    )) # nolint
 }
 compare_values(poisson_dist, 5, 5, "Poisson")
 compare_values(norm_dist, 5, 5, "Normal")
