@@ -51,6 +51,16 @@ The focus is on **statistical thinking** and **analytical methods** rather than 
 - Visualized **population vs. sample density plots** (blue = full distribution, red = sample).
 - **Applications**: demonstrating **bias, variance, and consistency** of estimators.
 
+### 7. Hypothesis Testing on Amazon Reviews
+
+- Investigated whether **average customer ratings differ** between groups of reviews.
+- Defined groups based on **helpfulness ratio** (High vs. Low helpfulness).
+- Applied **two-sample t-test** to compare mean ratings across groups.
+- Verified assumptions with **Shapiro-Wilk test** (normality) and **Levene’s Test** (homogeneity of variance).
+- Used **Wilcoxon rank-sum test** as a non-parametric alternative when assumptions failed.
+- Visualized rating distributions across groups using **boxplots** and **density plots**.
+- **Applications**: helps analyze whether reviews perceived as more helpful are systematically rated higher, giving insight into customer trust and review quality.
+
 ## Datasets
 
 - **Retail Demand Forecasting**: [Online Sales Dataset (Kaggle)](https://www.kaggle.com/datasets/yusufdelikkaya/online-sales-dataset)
@@ -59,6 +69,7 @@ The focus is on **statistical thinking** and **analytical methods** rather than 
 - **Iris Dataset (EDA)**: Built-in R dataset.
 - **Probability Simulation**: Simulated using R random generators (`rpois`, `rnorm`, `rbinom`, etc.).
 - **Theory of Estimation**: Simulated using `rnorm`.
+- **Hypothesis Testing**: [Amazon Product Reviews (Kaggle)](https://www.kaggle.com/datasets/arhamrumi/amazon-product-reviews)
 
 ## Statistical Concepts Applied
 
@@ -81,6 +92,8 @@ The focus is on **statistical thinking** and **analytical methods** rather than 
 - **tidytext** for text mining
 - **forecast** for time series
 - **ggplot2** for data visualization
+- **rstatix** for hypothesis testing and assumption checks
+- **car** for advanced statistical tests (e.g., Levene’s Test)
 - Planned: `pandas`, `scikit-learn`, etc. for Python
 
 ## How to Use
@@ -105,3 +118,9 @@ The focus is on **statistical thinking** and **analytical methods** rather than 
 - **Automated Data Pipelines**: Stream data from APIs/databases.
 - **Reusable Templates**: Create modular templates for applied statistics.
 - **Dynamic User Inputs**: Allow interactive selection of distribution type, sample size, parameters, etc.
+- **Interactive Hypothesis Testing**: Allow users to dynamically select variables of interest (e.g., `Score`, `HelpfulnessRatio`, or review length) and define their own **Null (H₀)** and **Alternative (H₁)** hypotheses.
+- **Automated Test Selection**: Based on user input and data characteristics, the program could automatically choose the most suitable test (t-test, ANOVA, Wilcoxon, Kruskal-Wallis, Chi-squared, etc.).
+- **User-Friendly Interface**: Implement input prompts in R (command line) or an interactive Shiny app, so users can run hypothesis testing without modifying the script.
+- **Customizable Significance Level (α)**: Let users specify their preferred confidence levels (e.g., 0.05, 0.01).
+- **Effect Size & Power Analysis**: Extend beyond p-values by calculating **Cohen’s d**, **η²**, and performing **power analysis** to assess the strength and reliability of findings.
+- **Report Generation**: Automatically generate concise reports (tables + plots) summarizing test assumptions, test results, and interpretation.
