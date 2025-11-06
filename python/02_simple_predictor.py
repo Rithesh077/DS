@@ -32,11 +32,12 @@ class SimplePredictor:
 
 
 # sample dataset
-training_inputs = np.array([[0, 0],
+training_inputs = np.array([[0, 0],  # any dataset will work
                             [0, 1],
                             [1, 0],
                             [1, 1]])
-training_outputs = np.array([0, 1, 1, 0])  # XOR problem
+# need to be adjusted for different dataset
+training_outputs = np.array([0, 1, 1, 0])
 SimplePredictor_instance = SimplePredictor(
     num_inputs=2, learning_rate=0.1, epochs=10)
 SimplePredictor_instance.train(training_inputs, training_outputs)
