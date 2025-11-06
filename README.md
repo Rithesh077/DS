@@ -6,6 +6,8 @@ The focus is on **statistical thinking** and **analytical methods** rather than 
 
 ## Projects
 
+### In R:
+
 ### 1. Retail Demand Forecasting & Inventory Optimization
 
 - Modeled weekly product demand using **time series forecasting (ARIMA)**.
@@ -72,6 +74,14 @@ From the dashboard, you can:
 - Access generated files (e.g., `outputs/figures`, `outputs/04_exploratory_data_analysis.html`).
 
 This allows for **streamlined execution** without editing scripts manually.
+
+### In Python:
+
+### 2.Simple Predictor
+
+- **Libraries Used**: `Matplotlib` for visualization and `numpy` for array operations.
+- The data used is small and has been created only for testing the training method.
+- Hyperparameters can be set to one's requirement as well as the training and testing datasets.
 
 ## Datasets
 
