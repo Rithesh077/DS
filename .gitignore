@@ -3,13 +3,12 @@
 .RData
 .Ruserdata
 
-/data/
-*.csv.zip
-/outputs/
-
 .Rproj.user/
 
 _cache/
 /cache/
 *.utf8.md
 *.knit.md
+/outputs
+/data
+myenv
