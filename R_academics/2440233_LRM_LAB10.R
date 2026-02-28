@@ -109,3 +109,8 @@ print("inference removing gnp generally decreased standard errors for remaining 
 # the standard errors of the coefficients in the partially collinear set improved
 # this makes the remaining estimates slightly more precise and reliable
 # the overall model is now more parsimonious while addressing the collinearity issue
+
+# conclusion
+# multicollinearity poses a significant challenge in multiple linear regression by inflating standard errors
+# using tools like variance inflation factor and correlation matrices helps in effectively diagnosing this issue
+# addressing it through variable removal or other techniques leads to more reliable and interpretable models
