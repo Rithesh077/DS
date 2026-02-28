@@ -25,6 +25,7 @@ print(dim(air_clean))
 # 3 fitting multiple linear regression model
 model <- lm(Ozone ~ Solar.R + Wind + Temp, data = air_clean)
 print(summary(model))
+?airquality
 
 # 4 fitted regression equation
 # ozone = -64.34 + 0.059*solar.r - 3.33*wind + 1.65*temp
