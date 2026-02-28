@@ -1,6 +1,6 @@
 # labassignment9
 # autocorrelation of residuals in regression analysis
-
+?longley
 # introduction
 # autocorrelation refers to the correlation between successive residuals in a time series data
 # it violates the assumption of independence of errors in linear regression model leading to bias
