@@ -12,3 +12,7 @@ _cache/
 /outputs
 /data
 myenv
+/__pycache__/
+R_academics/lrm_cia3_case_study/outputs
+R_academics/lrm_cia3_case_study/datasets
+R_academics/lrm_cia3_case_study/__pycache__/
