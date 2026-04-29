@@ -1,147 +1,41 @@
-# Statistical Applications & Analysis
+# data science lab
 
-This repository is a curated collection of **statistical projects** that demonstrate how theoretical concepts in **statistics and data science** can be applied to real-world problems for meaningful insights.
+this repo is my scratchpad for data science experiments: stats, time series, econometrics, and a bit of ml.
+i prototype here, keep notes, and learn libraries properly.
+if something turns into a clean, reusable project, it will move into its own dedicated repo.
 
-The focus is on **statistical thinking** and **analytical methods** rather than on any single programming language. Projects are implemented primarily in **R**, with plans to extend to **Python**.
+## current focus: scipy + statsmodels study tools
 
-## Projects
+building small cli-style tools to learn scipy and statsmodels(then scikit-learn and pytorch).
+the running notes live in docs/.
 
-### In R:
+- [docs index](docs/)
+- [0.1 regression diagnostics engine (statsmodels)](docs/0.1-regression-diagnostics-engine.md)
+- [0.2 distribution fitting engine (scipy)](docs/0.2-distribution-fitting-engine.md)
+- [0.3 time series diagnostics and forecasting (statsmodels.tsa)](docs/0.3-time-series-diagnostics-forecasting.md)
+- [0.4 resampling and power simulation lab (scipy + numpy)](docs/0.4-resampling-power-simulation.md)
+- [0.5 optimization trace harness (scipy optimize)](docs/0.5-optimization-trace-harness.md)
+- [0.6 linear algebra stability explorer (scipy linalg / sparse)](docs/0.6-linear-algebra-stability.md)
+- [0.7 model evaluation and calibration playground (scikit-learn)](docs/0.7-evaluation-calibration.md)
+- [0.8 autograd and numerical stability lab (pytorch)](docs/0.8-autograd-numerical-stability.md)
 
-### 1. Retail Demand Forecasting & Inventory Optimization
+## what's here
 
-- Modeled weekly product demand using **time series forecasting (ARIMA)**.
-- Optimized reorder quantities to balance stockouts and overstocking.
-- **Dataset**: ~49,000 simulated e-commerce transactions.
-- **Applications**: inventory planning, purchasing, warehouse optimization.
+- r scripts and a shiny dashboard
+- python scripts and small utilities
+- generated outputs go under outputs/ (ignored by default)
+- local datasets go under data/ (ignored by default)
 
-### 2. Sentiment Analysis of Product Reviews
+## older work (mostly r)
 
-- Preprocessed and tokenized customer reviews.
-- Applied **lexicon-based sentiment scoring (AFINN)**.
-- Classified reviews as **Positive, Negative, or Neutral**.
-- **Applications**: understanding customer satisfaction & opinion trends.
+- retail demand forecasting and inventory planning (arima)
+- sentiment analysis on product reviews (afinn)
+- sales data eda and correlation analysis
+- probability distribution simulation (clt, lln, goodness-of-fit)
+- estimation demos (sampling and density visualizations)
+- hypothesis testing on amazon reviews (assumptions checks, t-test vs wilcoxon)
 
-### 3. Sales Data Analysis
+## running
 
-- Cleaned and transformed e-commerce sales data.
-- Conducted **descriptive statistics** and correlation studies (Pearson, Spearman).
-- Explored the effect of **discount strategies** on **customer ratings**.
-- **Applications**: evaluating pricing and promotion strategies.
-
-### 4. EDA on Iris Dataset
-
-- Performed **summary statistics** on the classic Iris dataset.
-- Implemented a custom **mode function** for numeric columns.
-- Generated **interactive visualizations** (histogram, boxplot, scatterplot).
-- Added **automated R Markdown EDA reports**.
-- **Applications**: demonstrating exploratory data analysis workflow.
-
-### 5. Probability Distribution Simulation
-
-- Simulated data from **Poisson, Normal, Binomial, Chi-squared, Gamma, and Exponential** distributions.
-- Compared simulated vs. theoretical **mean, variance, and standard deviation**.
-- Implemented a **Central Limit Theorem (CLT) simulator**.
-- Visualized convergence via **Law of Large Numbers (LLN)** and **goodness-of-fit tests**.
-- **Applications**: illustrating the connection between theoretical distributions and real simulations.
-
-### 6. Theory of Estimation – Sampling & Density Visualization
-
-- Generated a **Normal distribution** with user-defined sample sizes.
-- Drew **random samples** and computed sample mean & standard deviation.
-- Compared population vs. sample statistics to show estimation concepts.
-- Visualized **population vs. sample density plots** (blue = full distribution, red = sample).
-- **Applications**: demonstrating **bias, variance, and consistency** of estimators.
-
-### 7. Hypothesis Testing on Amazon Reviews
-
-- Investigated whether **average customer ratings differ** between groups of reviews.
-- Defined groups based on **helpfulness ratio** (High vs. Low helpfulness).
-- Applied **two-sample t-test** to compare mean ratings across groups.
-- Verified assumptions with **Shapiro-Wilk test** (normality) and **Levene’s Test** (homogeneity of variance).
-- Used **Wilcoxon rank-sum test** as a non-parametric alternative when assumptions failed.
-- Visualized rating distributions across groups using **boxplots** and **density plots**.
-- **Applications**: helps analyze whether reviews perceived as more helpful are systematically rated higher, giving insight into customer trust and review quality.
-
-## Shiny App Dashboard
-
-All projects can be run through a centralized **Shiny dashboard (`app.R`)** with an interactive sidebar.  
-From the dashboard, you can:
-
-- Run each statistical project with a **single click**.
-- View **console outputs** (summaries, test results, etc.).
-- Display **plots** or **reports** generated by each script (when available).
-- Access generated files (e.g., `outputs/figures`, `outputs/04_exploratory_data_analysis.html`).
-
-This allows for **streamlined execution** without editing scripts manually.
-
-### In Python:
-
-### 2.Simple Predictor
-
-- **Libraries Used**: `Matplotlib` for visualization and `numpy` for array operations.
-- The data used is small and has been created only for testing the training method.
-- Hyperparameters can be set to one's requirement as well as the training and testing datasets.
-
-## Datasets
-
-- **Retail Demand Forecasting**: [Online Sales Dataset (Kaggle)](https://www.kaggle.com/datasets/yusufdelikkaya/online-sales-dataset)
-- **Sentiment Analysis**: [Amazon Product Reviews (Kaggle)](https://www.kaggle.com/datasets/arhamrumi/amazon-product-reviews)
-- **Sales Data Analysis**: Provided in repo.
-- **Iris Dataset (EDA)**: Built-in R dataset.
-- **Probability Simulation**: Simulated using R random generators (`rpois`, `rnorm`, `rbinom`, etc.).
-- **Theory of Estimation**: Simulated using `rnorm`.
-- **Hypothesis Testing**: [Amazon Product Reviews (Kaggle)](https://www.kaggle.com/datasets/arhamrumi/amazon-product-reviews)
-
-## Statistical Concepts Applied
-
-- **Descriptive statistics** (mean, variance, mode, distributions)
-- **Correlation analysis** (Pearson, Spearman)
-- **Text mining & sentiment analysis**
-- **Time series forecasting (ARIMA)**
-- **Optimization in inventory control**
-- **Exploratory Data Analysis (EDA)**
-- **Probability distributions & simulation** (Poisson, Normal, etc.)
-- **Estimation theory** (sample vs. population, bias, variance)
-- **Central Limit Theorem (CLT)**
-- **Law of Large Numbers (LLN)**
-- **Goodness-of-fit tests**
-
-## Technologies Used
-
-- **R** (primary) | Future expansion to **Python**
-- **tidyverse (dplyr, ggplot2, tidyr)** for wrangling & visualization
-- **tidytext** for text mining
-- **forecast** for time series
-- **ggplot2** for data visualization
-- **rstatix** for hypothesis testing and assumption checks
-- **car** for advanced statistical tests (e.g., Levene’s Test)
-- Planned: `pandas`, `scikit-learn`, etc. for Python
-
-## How to Use
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/Rithesh077/statistics_projects
-   cd statistics_projects
-   ```
-2. Navigate To the desired project folder.
-3. Open the desired scripts.
-4. Run the script.
-5. The output files are saved in outputs/figures or outputs/tables.
-
-## Future Enhancements
-
-- **Python Projects**: Extend repository with Python implementations.
-- **Machine Learning Integration**: Random Forest, XGBoost, etc.
-- **Advanced Forecasting**: VAR, Prophet with seasonality & regressors.
-- **Enhanced Text Analytics**: Use multiple sentiment lexicons (AFINN, NRC, Bing).
-- **Automated Data Pipelines**: Stream data from APIs/databases.
-- **Reusable Templates**: Create modular templates for applied statistics.
-- **Dynamic User Inputs**: Allow interactive selection of distribution type, sample size, parameters, etc.
-- **Interactive Hypothesis Testing**: Allow users to dynamically select variables of interest (e.g., `Score`, `HelpfulnessRatio`, or review length) and define their own **Null (H₀)** and **Alternative (H₁)** hypotheses.
-- **Automated Test Selection**: Based on user input and data characteristics, the program could automatically choose the most suitable test (t-test, ANOVA, Wilcoxon, Kruskal-Wallis, Chi-squared, etc.).
-- **User-Friendly Interface**: Implement input prompts in R (command line) or an interactive Shiny app, so users can run hypothesis testing without modifying the script.
-- **Customizable Significance Level (α)**: Let users specify their preferred confidence levels (e.g., 0.05, 0.01).
-- **Effect Size & Power Analysis**: Extend beyond p-values by calculating **Cohen’s d**, **η²**, and performing **power analysis** to assess the strength and reliability of findings.
-- **Report Generation**: Automatically generate concise reports (tables + plots) summarizing test assumptions, test results, and interpretation.
+- r: run scripts in the r folder, or run the shiny app
+- python: create a venv, install dependencies, run scripts in the python folder

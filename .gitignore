@@ -16,3 +16,7 @@ myenv
 R_academics/lrm_cia3_case_study/outputs
 R_academics/lrm_cia3_case_study/datasets
 R_academics/lrm_cia3_case_study/__pycache__/
+
+# Personal roadmaps / learning backlog (kept local)
+LEARN.md
+PLANNED.md
